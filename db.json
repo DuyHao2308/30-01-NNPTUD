@@ -1,0 +1,84 @@
+{
+  "$schema": "./node_modules/json-server/schema.json",
+  "posts": [
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100,
+      "price": 50,
+      "images": ["https://via.placeholder.com/80x80?text=Product+1"]
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200,
+      "price": 75,
+      "images": ["https://via.placeholder.com/80x80?text=Product+2"]
+    },
+    {
+      "id": "3",
+      "title": "âhha",
+      "views": 200,
+      "price": 100,
+      "images": ["https://via.placeholder.com/80x80?text=Product+3"]
+    },
+    {
+      "id": "4",
+      "title": "haha",
+      "views": "400",
+      "price": 125,
+      "images": ["https://via.placeholder.com/80x80?text=Product+4"]
+    },
+    {
+      "title": "heheheehhe",
+      "views": "2000",
+      "id": "5",
+      "price": 150,
+      "images": ["https://via.placeholder.com/80x80?text=Product+5"]
+    },
+    {
+      "title": "heheheehehehe",
+      "views": "800",
+      "id": "6",
+      "price": 200,
+      "images": ["https://via.placeholder.com/80x80?text=Product+6"]
+    },
+    {
+      "id": "7",
+      "title": "HHEHEHE",
+      "views": "5000",
+      "isDeleted": true,
+      "price": 250,
+      "images": ["https://via.placeholder.com/80x80?text=Product+7"]
+    },
+    {
+      "id": "8",
+      "title": "Duy Hành hôi lách",
+      "views": "5000",
+      "isDeleted": false,
+      "price": 300,
+      "images": ["https://via.placeholder.com/80x80?text=Product+8"]
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "3",
+      "text": "Duy hành hôi lách",
+      "postId": "8",
+      "isDeleted": true
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

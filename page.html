@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management</title>
+
+    <style>
+    body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background-color: #f4f6f9;
+        padding: 20px;
+    }
+
+    h2 {
+        margin-top: 0;
+        margin-bottom: 15px;
+        color: #333;
+    }
+
+    .section {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    /* ===== CONTROL BAR ===== */
+    .input-group {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        margin-bottom: 12px;
+        background: #f1f3f5;
+        padding: 12px;
+        border-radius: 8px;
+    }
+
+    input[type="text"], select {
+        padding: 8px 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 14px;
+    }
+
+    /* ===== BUTTON ===== */
+    button {
+        padding: 8px 14px;
+        border-radius: 6px;
+        border: none;
+        font-weight: 600;
+        cursor: pointer;
+        background: #28a745;
+        color: white;
+    }
+
+    button:hover {
+        opacity: 0.9;
+    }
+
+    /* ===== TABLE ===== */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    thead {
+        background: #2f2f2f;
+        color: white;
+    }
+
+    th, td {
+        padding: 12px;
+        border-bottom: 1px solid #e0e0e0;
+        text-align: left;
+    }
+
+    /* Zebra rows */
+    tbody tr:nth-child(odd) {
+        background-color: #fafafa;
+    }
+
+    tbody tr:hover {
+        background-color: #f1f7ff;
+    }
+
+    /* ===== IMAGE ===== */
+    .product-img {
+        width: 80px;
+        height: 80px;
+        border-radius: 8px;
+        object-fit: cover;
+        border: 1px solid #ddd;
+        background: #fff;
+    }
+
+    /* ===== PAGINATION ===== */
+    .pagination {
+        margin-bottom: 10px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+</style>
+
+
+    <script defer src="main.js"></script>
+</head>
+
+<body>
+<div class="section">
+    <h2>Products Management</h2>
+
+    <!-- SEARCH + SORT + PAGE SIZE -->
+    <div class="input-group">
+        <input type="text" id="post_search_txt" placeholder="Search by title..." />
+
+        <select id="post_page_size">
+            <option value="5">5</option>
+            <option value="10" selected>10</option>
+            <option value="20">20</option>
+        </select>
+
+        <button onclick="SortPostByTitle()">Title ↑↓</button>
+        <button onclick="SortPostByPrice()">Price ↑↓</button>
+    </div>
+
+    <!-- PAGINATION -->
+    <div style="margin-bottom:10px">
+        <button onclick="PrevPostPage()">Prev</button>
+        <span id="post_page_info"></span>
+        <button onclick="NextPostPage()">Next</button>
+    </div>
+
+    <!-- TABLE -->
+    <table id="post-table">
+        <thead>
+        <tr>
+            <th style="width:60px">ID</th>
+            <th style="width:100px">Image</th>
+            <th>Title</th>
+            <th style="width:120px">Price</th>
+        </tr>
+        </thead>
+        <tbody id="post-body"></tbody>
+    </table>
+</div>
+</body>
+</html>
